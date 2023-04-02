@@ -19,6 +19,9 @@ router.get('/',(req,res,next)=>{
     console.log("Before executing ");
     next();
 },(req,res)=>{
+    res.cookie("visited",true,{
+        maxAge:10000
+    }),
 res.send(grocerylist)
 },
 (req,res,next)=>{
